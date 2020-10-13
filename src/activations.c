@@ -13,19 +13,36 @@ void activate_matrix(matrix m, ACTIVATION a)
         double sum = 0;
         for(j = 0; j < m.cols; ++j){
             double x = m.data[i*m.cols + j];
+            double actX;
             if(a == LOGISTIC){
                 // TODO
+                actX = 1 / (1 + exp(-x));
             } else if (a == RELU){
                 // TODO
+                if (x <= 0) {
+                    actX = 0;
+                } else {
+                    actX = x;
+                }
             } else if (a == LRELU){
                 // TODO
+                if (x < 0) {
+                    actX = 0.01 * x;
+                } else {
+                    actX = x;
+                }
             } else if (a == SOFTMAX){
                 // TODO
+                actX = exp(x);
             }
+            m.data[i*m.cols + j] = actX;  // Update matrix with activated x
             sum += m.data[i*m.cols + j];
         }
         if (a == SOFTMAX) {
             // TODO: have to normalize by sum if we are using SOFTMAX
+            for (int k = 0; i < m.cols; ++k) {
+                m.data[i*m.cols + k] /= sum;
+            }
         }
     }
 }
