@@ -15,31 +15,32 @@ void activate_matrix(matrix m, ACTIVATION a)
             double x = m.data[i*m.cols + j];
             double actX;
             if(a == LOGISTIC){
-                // TODO
+                // TODO (DONE)
                 actX = 1 / (1 + exp(-x));
             } else if (a == RELU){
-                // TODO
+                // TODO (DONE)
                 if (x <= 0) {
                     actX = 0;
                 } else {
                     actX = x;
                 }
             } else if (a == LRELU){
-                // TODO
+                // TODO (DONE)
                 if (x < 0) {
-                    actX = 0.01 * x;
+                    // use alpha=0.1 as dictated by readme
+                    actX = 0.1 * x;
                 } else {
                     actX = x;
                 }
             } else if (a == SOFTMAX){
-                // TODO
+                // TODO (DONE)
                 actX = exp(x);
             }
             m.data[i*m.cols + j] = actX;  // Update matrix with activated x
             sum += m.data[i*m.cols + j];
         }
         if (a == SOFTMAX) {
-            // TODO: have to normalize by sum if we are using SOFTMAX
+            // TODO (DONE): have to normalize by sum if we are using SOFTMAX
             for (int k = 0; i < m.cols; ++k) {
                 m.data[i*m.cols + k] /= sum;
             }
@@ -58,9 +59,10 @@ void gradient_matrix(matrix m, ACTIVATION a, matrix d)
     for(i = 0; i < m.rows; ++i){
         for(j = 0; j < m.cols; ++j){
             double x = m.data[i*m.cols + j];
-            // TODO: multiply the correct element of d by the gradient
+            // TODO (DONE): multiply the correct element of d by the gradient
             double grad;
             if (a == LINEAR || a == SOFTMAX) {
+                // using gradient 1 for softmax as dictated by readme
                 grad = 1;
             } else if (a == LOGISTIC) {
                 grad = x * (1 - x);
@@ -72,7 +74,8 @@ void gradient_matrix(matrix m, ACTIVATION a, matrix d)
                 }
             } else if (a == LRELU) {
                 if (x < 0) {
-                    grad = 0.01;
+                    // LRELU alpha is 0.1 as dictated by readme
+                    grad = 0.1;
                 } else {
                     grad = 1;
                 }

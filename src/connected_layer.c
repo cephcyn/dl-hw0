@@ -37,7 +37,7 @@ void backward_bias(matrix delta, matrix db)
 // returns: the result of running the layer: f(wx + b)
 matrix forward_connected_layer(layer l, matrix in)
 {
-    // TODO: 3.1 - run the network forward
+    // TODO (DONE): 3.1 - run the network forward
     matrix out = matmul(in, l.w);
     forward_bias(out, l.b);
     activate_matrix(out, l.activation);
