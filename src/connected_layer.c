@@ -40,7 +40,7 @@ matrix forward_connected_layer(layer l, matrix in)
     // TODO: 3.1 - run the network forward
     matrix out = matmul(in, l.w);
     forward_bias(out, l.b);
-    activate_matrix(out, l.ACTIVATION);
+    activate_matrix(out, l.activation);
 
     // Saving our input and output and making a new delta matrix to hold errors
     // Probably don't change this
