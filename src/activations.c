@@ -13,7 +13,7 @@ void activate_matrix(matrix m, ACTIVATION a)
         double sum = 0;
         for(j = 0; j < m.cols; ++j){
             double x = m.data[i*m.cols + j];
-            double actX;
+            double actX = 0;
             if(a == LOGISTIC){
                 // TODO (DONE)
                 actX = 1 / (1 + exp(-x));
@@ -41,7 +41,7 @@ void activate_matrix(matrix m, ACTIVATION a)
         }
         if (a == SOFTMAX) {
             // TODO (DONE): have to normalize by sum if we are using SOFTMAX
-            for (int k = 0; i < m.cols; ++k) {
+            for (int k = 0; k < m.cols; ++k) {
                 m.data[i*m.cols + k] /= sum;
             }
         }
@@ -60,7 +60,7 @@ void gradient_matrix(matrix m, ACTIVATION a, matrix d)
         for(j = 0; j < m.cols; ++j){
             double x = m.data[i*m.cols + j];
             // TODO (DONE): multiply the correct element of d by the gradient
-            double grad;
+            double grad = 0;
             if (a == LINEAR || a == SOFTMAX) {
                 // using gradient 1 for softmax as dictated by readme
                 grad = 1;
