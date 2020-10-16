@@ -11,6 +11,7 @@ uwnet
 
 # ignore datasets...
 mnist*
+cifar*
 
 # OS Generated #
 .DS_Store*
