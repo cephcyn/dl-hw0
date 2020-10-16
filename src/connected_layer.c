@@ -101,15 +101,19 @@ void update_connected_layer(layer l, float rate, float momentum, float decay)
 
     // For our weights we want to include weight decay:
     // l.dw = l.dw - decay * l.w
+    axpy_matrix(-1 * decay, l.w, l.dw);
 
     // Then for both weights and biases we want to apply the updates:
     // l.w = l.w + rate*l.dw
-    // l.b = l.b + rade*l.db
-
+    axpy_matrix(rate, l.dw, l.w);
+    // l.b = l.b + rate*l.db
+    axpy_matrix(rate, l.db, l.b);
 
     // Finally, we want to scale dw and db by our momentum to prepare them for the next round
     // l.dw *= momentum
+    scal_matrix(momentum, l.dw);
     // l.db *= momentum
+    scal_matrix(momentum, l.db);
 
 }
 
