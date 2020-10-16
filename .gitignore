@@ -9,6 +9,9 @@
 libuwnet*
 uwnet
 
+# ignore datasets...
+mnist*
+
 # OS Generated #
 .DS_Store*
 ehthumbs.db
