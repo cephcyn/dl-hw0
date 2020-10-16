@@ -1,0 +1,30 @@
+## 4.2: Training a model on MNIST
+Training results:
+- Softmax (784x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.0 decay
+    - 0.920 train, 0.921 test
+- Neural net (784x32 lrelu, 32x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.0 decay
+    - 0.960 train, 0.956 test
+- Neural net (784x32 lrelu, 32x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.1 decay
+   - 0.957 train, 0.955 test
+- Neural net (784x32 lrelu, 32x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.01 decay
+   - 0.960 train, 0.956 test
+- Neural net (784x32 relu, 32x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.01 decay
+   - 0.963 train, 0.956 test
+- Neural net (784x32 logistic, 32x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.01 decay
+   - 0.930 train, 0.931 test
+- Neural net (784x64 lrelu, 64x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.01 decay
+   - 0.968 train, 0.963 test
+- Neural net (784x64 lrelu, 64x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.5 momentum, 0.01 decay
+   - 0.927 train, 0.929 test
+- Neural net (784x64 lrelu, 64x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.7 momentum, 0.01 decay
+   - 0.940 train, 0.940 test
+- Neural net (784x64 lrelu, 64x10 softmax), 256 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.01 decay
+   - 0.969 train, 0.963 test
+
+## 4.3: Training a model on CIFAR
+Training results:
+- Softmax (3072x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.0 decay
+    - 0.407 train, 0.372 test
+- Neural net (3072x32 lrelu, 32x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.0 decay
+    - 0.451 train, 0.424 test
+
