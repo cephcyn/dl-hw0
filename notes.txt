@@ -58,7 +58,7 @@ Thoughts:
 - Like MNIST, adding a small amount of decay (0 -> 0.01 -> 0.1) improves relative test performance slightly (as it should), but then decreases it again likely because of overgeneralization.
 - I didn't try linear activation function on either of these datasets because it was likely it would fail to perform as well as the others, but otherwise relu and lrelu did comparably on both datasets and logistic activation function did slightly worse on MNIST but still comparable on CIFAR. Activation functions are more complex to compare.
 - Like MNIST, increasing the number of hidden nodes (32 -> 64) increases performance. However, the effect is smaller on CIFAR.
-- Reducing momentum (0.9 -> 0.7 -> 0.5)
-- Increasing batch size (128 -> 256) 
-- Increasing learning rate (0.01 -> 0.05 -> 0.1)
+- Reducing momentum (0.9 -> 0.7 -> 0.5) had mixed effects.
+- Like MNIST, increasing batch size (128 -> 256) improved performance.
+- Increasing learning rate (0.01 -> 0.05 -> 0.1) had mixed effects: improved performance on MNIST, but reduced performance for CIFAR.
 
