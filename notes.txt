@@ -44,7 +44,14 @@ Training results:
 - Neural net (3072x64 lrelu, 64x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.7 momentum, 0.1 decay
     - 0.494 train, 0.474 test
 - Neural net (3072x64 lrelu, 64x10 softmax), 128 batch, 5000 iter, 0.01 rate, 0.5 momentum, 0.1 decay
-    - 
+    - 0.475 train, 0.460 test
+- Neural net (3072x64 lrelu, 64x10 softmax), 256 batch, 5000 iter, 0.01 rate, 0.9 momentum, 0.01 decay
+    - 0.525 train, 0.483 test
+- Neural net (3072x64 lrelu, 64x10 softmax), 256 batch, 5000 iter, 0.05 rate, 0.9 momentum, 0.01 decay
+    - 0.496 train, 0.457 test
+- Neural net (3072x64 lrelu, 64x10 softmax), 256 batch, 5000 iter, 0.1 rate, 0.9 momentum, 0.01 decay
+    - 0.464 train, 0.427 test
+
 Thoughts:
 - CIFAR is a lot harder of a dataset than MNIST! We had a baseline performance that was only half as good.
 - Like MNIST, changing from a softmax to a NN model definitely improved performance.
