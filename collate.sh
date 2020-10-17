@@ -15,6 +15,7 @@ prepare src/connected_layer.c
 prepare trymnist.py
 prepare trycifar.py
 prepare mnist_pytorch.ipynb
+prepare notes.txt
 
 tar cvzf submit.tar.gz submit
 rm -rf submit/
